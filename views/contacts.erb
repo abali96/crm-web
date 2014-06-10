@@ -1,6 +1,6 @@
 <h1>All Contacts</h1>
 <ul>
 	<% @contacts.each do |contact| %>
-	<li><%= contact.first_name %> <%= contact.last_name + " is reachable at "%><%= contact.email %></li>
+	<li><%= contact.first_name %> <%= contact.last_name + " is reachable at "%><%= contact.email %><%= ". Here are our notes on this person: "%><%= contact.note %></li>
 	<% end %>
 </ul>
