@@ -7,7 +7,7 @@ class Rolodex
 	end
 
 	def add_contact(contact)
-		contact.id = contact_id
+		contact.id = @contact_id
 		@contacts << contact
 		@contact_id += 1
 	end
