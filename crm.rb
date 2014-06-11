@@ -2,7 +2,7 @@ require 'sinatra'
 require_relative 'contact'
 require_relative 'rolodex'
 
-@@rolodex = Rolodex.new
+@@rolodex = Rolodex.new("AHAHAH")
 
 
 get '/' do
