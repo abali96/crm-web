@@ -67,3 +67,14 @@ put 'contacts/:id' do
 		raise Sinatra::NotFound
 	end
 end
+
+delete "/contracts/:id" do
+	@contract = @@rolodex.find(params[:id].to_i)
+	if @contact
+		@@rolodex.remove_contact(@contact)
+		redirect to ("/contracts")
+	else
+		raise Sinatra::NotFound
+	end		
+end
+
