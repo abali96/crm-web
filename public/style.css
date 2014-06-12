@@ -1,0 +1,95 @@
+h1, h2, h3, h4, h5, h6, p, a, header, footer, ul, li {
+	font-family: 'Permanent Marker', cursive;
+	color: #4E4E56;
+}
+
+body {
+	background-image:url('crossword.png');
+}
+
+h1 {
+	font-size: 30px;
+	margin-left: 5%;
+}
+
+nav {
+	/*position: absolute;*/
+	width: 100%;
+}
+
+nav ul {
+	padding: 16px 0;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline;
+	margin-right: 60px;
+}
+
+nav ul li:last-of-type {
+	margin-right: 0;
+}
+
+footer {
+	position:absolute;
+	bottom: 0;
+	width:100%;
+	text-align: center;
+}
+
+a {
+	  text-decoration: none;
+}
+li > a:hover {
+	color: #AA0114;
+}
+
+li > a {
+	-o-transition:.5s ease-in-out;
+  -ms-transition:.5s ease-in-out;
+  -moz-transition:.5s ease-in-out;
+  -webkit-transition:.5s ease-in-out;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 16px;
+	font-size: 3em;
+}
+
+form {
+	margin-left: 5%;
+}
+
+input {
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	border-radius: 3px;
+	-moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5); 
+	-webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5); 
+	box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+	input:focus { 
+	border:solid 1px #EEA34A; 
+}
+
+input sumbit {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#aaa)); 
+	background-image: -webkit-linear-gradient(top, #ddd, #aaa); 
+	background-image: -moz-linear-gradient(top, #ddd, #aaa); 
+	background-image: -ms-linear-gradient(top, #ddd, #aaa); 
+	background-image: -o-linear-gradient(top, #ddd, #aaa); 
+	background-image: linear-gradient(top, #ddd, #aaa); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddd', endColorstr='#aaa',GradientType=0 ); /* IE6-9 */
+}
+
+.list {
+	font-size: 100px
+}
+
+/*
+black: #4E4E56;
+red: #DA635D;
+bage: #DCD0C0;
+maroon: B1938B;
+*/

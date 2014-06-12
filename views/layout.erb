@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-<!-- 	<title>Arjun's CRM</title> -->
-</head>
-	<body> 
-		<header>Arjun's CRM App</header>
-		<%= yield %> 
-	</body>
+	<head>
+		<link rel="stylesheet" type = "text/css" href="/reset.css">
+		<link rel="stylesheet" type="text/css" href="/style.css">
+		<!-- fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Pacifico' rel='stylesheet' type='text/css'>
+	</head>
+		<body> 
+			<header><a href="/">Arjun's CRM App</a></header>
+	
+	<nav>
+	<ul>
+		<li><a href="/contacts" class="link">All contacts</a></li>
+		<li><a href="/contacts/new" class="link">New contact</a></li>
+		<li><a href="/contacts/:id/edit" class="link">
+			Modify contact</a></li>
+		<li><a href="/contacts/:id" class="link">Search</a></li>
+	</ul>
+</nav>
+			
+			<%= yield %> 
 
-
-<footer>&copy; Arjun Bali 2014</footer>
-</html>
+			<footer>&copy; Arjun Bali 2014</footer>
+			</body>
+	</html>
 
