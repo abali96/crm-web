@@ -1,0 +1,10 @@
+send a request to a server
+REST
+
+get 
+post (i'm sending something to the server)
+put (the resource exists already - I want you to change/replace it)
+patch (change a couple of the values)
+delete (a resource or a few)
+
+receive a response 
