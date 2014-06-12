@@ -20,14 +20,21 @@ get '/contacts/new' do
 	erb :new_contact
 end
 
-#View a contacts
-# get '/contacts/:id' do
-# end
-
-get "/contacts/1" do
-	@contact = @@rolodex.find(1)
-	erb :show_contact
+# View a contact (generalized with wildcard)
+get '/contacts/:id' do
+	@contact = @@rolodex.find(params[:id].to_i)
+	if @contact
+		erb :show_contact
+	else
+		raise Sinatra::NotFound
+	end
 end
+
+# Specific contact
+# get "/contacts/1" do
+# 	@contact = @@rolodex.find(1)
+# 	erb :show_contact
+# end
 
 # modify an existing ocntact
 get '/contacts/:id/edit' do
