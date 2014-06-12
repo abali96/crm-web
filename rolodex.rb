@@ -3,17 +3,17 @@ class Rolodex
 
 	def initialize
 		@contacts = []
-		@contact_id = 1
+		@id = 1
 	end
 
 	def add_contact(contact)
-		contact.id = @contact_id
+		contact.id = @id
 		@contacts << contact
-		@contact_id += 1
+		@id += 1
 	end
 
-	def find(contact_id)
-		@contacts.find { |contact| contact.id == contact_id }
+	def find(x)
+		@contacts.find { |contact| contact.id == x }
 	end
 
 end

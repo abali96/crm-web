@@ -36,13 +36,14 @@ end
 # 	erb :show_contact
 # end
 
-# modify an existing ocntact
-get '/contacts/:id/edit' do
+# modify an existing contact
+get '/contacts/edit/:id' do
+	erb :edit_contact
 end
 
 #post request for submission form
 post '/contacts' do
-	puts params
+	# puts params
 	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
 	@@rolodex.add_contact(new_contact)
 	redirect('/contacts')
