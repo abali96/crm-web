@@ -9,14 +9,12 @@ if POST or GET is not explicitly stated as the method, I think it's by default a
 <br>
 <form action="/contacts" method="post"> 
 					<!-- form is a block level attriute -->
-	<div>
-		<input type="text" name="first_name" placeholder="First name">
-	</div>
+	<input type="text" name="first_name" placeholder="First name">
 	<!-- using value="defaultvalue" basically has the box prefilled. Don't use placehoder if it's a long form - only use it for hints because if it's a long form, the user comes back to the top and has no context for what that box was for. Actually label the boxes when it's a long form! -->
 	<div><input type="text" name="last_name" placeholder="Last name"></div>
 	<div><input type="email" name="email" placeholder="Email"></div>
 	<div><input type="text" name="note" placeholder="Note"></div>
-	<div><button type="submit" style="cursor: pointer; cursor: hand;"><h1>ADD!</button></div>
+	<div><button type="submit"><h1>ADD!</h></button></div>
 </form>
 
 <!-- 

@@ -1,10 +1,22 @@
 <h1>Modify an Existing Contact</h1>
 
 <form action="/contacts/<%= @contact.id %>" method="post">
-	<input type="hidden" name="_method" value="put">
-	<input type="text" name="first_name" value="<%= @contact.first_name %>">
-	<input type="text" name="last_name" value="<%= @contact.last_name %>">
-	<input type="email" name="email" value="<%= @contact.email%>">
-	<input type="text" name="note" value="<%= @contact.note %>">
-	<input type="submit" name="MODIFY">
+		<div>
+			<input type="hidden" name="_method" value="put">
+		</div>
+		<div>
+			<input type="text" name="first_name" value="<%= @contact.first_name %>">
+		</div>
+		<div>
+			<input type="text" name="last_name" value="<%= @contact.last_name %>">
+		</div>
+		<div>
+			<input type="email" name="email" value="<%= @contact.email%>">
+		</div>
+		<div>
+			<input type="text" name="note" value="<%= @contact.note %>">
+		</div>
+		<div>
+			<button type="submit" style="cursor: pointer; cursor: hand;"><h1>Modify!</button>
+		 </div>
 </form>

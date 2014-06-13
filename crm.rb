@@ -4,7 +4,7 @@ require_relative 'rolodex'
 
 @@rolodex = Rolodex.new
 # FAKE DATA:
-@@rolodex.add_contact(Contact.new("jonny", "appleseed", "jonny@bitmakerlabs.com", "generic character"))
+# @@rolodex.add_contact(Contact.new("jonny", "appleseed", "jonny@bitmakerlabs.com", "generic character"))
 
 
 get '/' do
@@ -16,7 +16,7 @@ get '/contacts' do
   erb :contacts
 end
 
-#Add a new contacts
+#Add a new contact
 get '/contacts/new' do
 	erb :new_contact
 end
@@ -24,6 +24,7 @@ end
 # View a contact (generalized with wildcard)
 get '/contacts/:id' do
 	@contact = @@rolodex.find(params[:id].to_i)
+	#make a variable of @contact associated with the contact of the ID :id in the rolodex
 	if @contact
 		erb :show_contact
 	else

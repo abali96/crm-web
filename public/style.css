@@ -5,14 +5,11 @@ h1, h2, h3, h4, h5, h6, p, a, header, footer, ul, li, a {
 
 body {
 	background-image:url('crossword.png');
+	margin-left: 5%;	
 }
 
 h1 {
 	font-size: 30px;
-}
-
-div {
-	margin-left: 5%;
 }
 
 nav {
@@ -91,3 +88,9 @@ input:focus {
  	font-size: 100%;
  	font-family: inherit;
  }
+
+ button {
+ 	cursor: pointer; 
+ 	cursor: hand;
+ }
+
