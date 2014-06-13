@@ -3,6 +3,7 @@ require_relative 'contact'
 require_relative 'rolodex'
 
 @@rolodex = Rolodex.new
+# FAKE DATA:
 @@rolodex.add_contact(Contact.new("jonny", "appleseed", "jonny@bitmakerlabs.com", "generic character"))
 
 
@@ -48,13 +49,12 @@ end
 
 #post request for submission form
 post '/contacts' do
-	# puts params
 	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
 	@@rolodex.add_contact(new_contact)
-	redirect('/contacts')
+	redirect to ('/contacts')
 end
 
-put 'contacts/:id' do
+put '/contacts/:id' do
 	@contact = @@rolodex.find(params[:id].to_i)
 	if @contact
 		@contact.first_name = params[:first_name]
@@ -68,13 +68,12 @@ put 'contacts/:id' do
 	end
 end
 
-delete "/contracts/:id" do
-	@contract = @@rolodex.find(params[:id].to_i)
+delete "/contacts/:id" do
+	@contact = @@rolodex.find(params[:id].to_i)
 	if @contact
 		@@rolodex.remove_contact(@contact)
-		redirect to ("/contracts")
+		redirect to ("/contacts")
 	else
 		raise Sinatra::NotFound
 	end		
 end
-

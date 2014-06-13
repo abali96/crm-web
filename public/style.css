@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6, p, a, header, footer, ul, li {
+h1, h2, h3, h4, h5, h6, p, a, header, footer, ul, li, a {
 	font-family: 'Permanent Marker', cursive;
 	color: #4E4E56;
 }
@@ -16,7 +16,6 @@ div {
 }
 
 nav {
-	/*position: absolute;*/
 	width: 100%;
 }
 
@@ -70,10 +69,19 @@ input {
 	border-bottom: 1px solid goldenrod !important;
 	background: transparent !important;
 }
+
 input:focus {
 	outline: none;
 }
 
+.font-size-reset {
+	font-size: inherit !important;
+	border-bottom: 0px !important;
+	color: #4E4E56 !important;
+	margin-left: -5px;
+	margin-bottom: -10px;
+	display: inline;
+}
 
 .list {
 	font-size: 20px
@@ -83,11 +91,3 @@ input:focus {
  	font-size: 100%;
  	font-family: inherit;
  }
-
-
-/*
-black: #4E4E56;
-red: #DA635D;
-bage: #DCD0C0;
-maroon: B1938B;
-*/
