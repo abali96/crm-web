@@ -14,9 +14,8 @@ class Contact
 end
 
 DataMapper.finalize
-DataMapper.upgrade!
+DataMapper.auto_upgrade!
 
-@@rolodex = Rolodex.new
 # FAKE DATA:
 # @@rolodex.add_contact(Contact.new("jonny", "appleseed", "jonny@bitmakerlabs.com", "generic character"))
 
@@ -27,6 +26,7 @@ get '/' do
 end
 
 get '/contacts' do
+	@contacts = Contact.all
   erb :contacts
 end
 
@@ -37,7 +37,7 @@ end
 
 # View a contact (generalized with wildcard)
 get '/contacts/:id' do
-	@contact = @@rolodex.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	#make a variable of @contact associated with the contact of the ID :id in the rolodex
 	if @contact
 		erb :show_contact
@@ -45,12 +45,6 @@ get '/contacts/:id' do
 		raise Sinatra::NotFound
 	end
 end
-
-# Specific contact
-# get "/contacts/1" do
-# 	@contact = @@rolodex.find(1)
-# 	erb :show_contact
-# end
 
 # modify an existing contact
 get '/contacts/:id/edit' do
@@ -64,8 +58,12 @@ end
 
 #post request for submission form
 post '/contacts' do
-	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-	@@rolodex.add_contact(new_contact)
+	contact = Contact.create(
+			:first_name => params[:first_name],
+			:last_name => params[:last_name],
+			:email => params[:email],
+			:note => params[:note]
+		)
 	redirect to ('/contacts')
 end
 
@@ -84,11 +82,13 @@ put '/contacts/:id' do
 end
 
 delete "/contacts/:id" do
-	@contact = @@rolodex.find(params[:id].to_i)
-	if @contact
-		@@rolodex.remove_contact(@contact)
-		redirect to ("/contacts")
-	else
-		raise Sinatra::NotFound
-	end		
+	@contact = Contact.get(params[:id].to_i)
+	@contact.destroy
+	# if @contact
+	# 	@@rolodex.remove_contact(@contact)
+	# 	redirect to ("/contacts")
+	# else
+	# 	raise Sinatra::NotFound
+	# end		
+	redirect to("/contacts")
 end

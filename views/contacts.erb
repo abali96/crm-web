@@ -1,7 +1,6 @@
-<title><%= "CRM: #{@@rolodex}" %></title>
 <h1>All Contacts</h1>
 <ul class="list">
-	<% @@rolodex.contacts.each do |contact| %>
+	<% @contacts.each do |contact| %>
 		<a href="/contacts/<%= contact.id %>"><li><%= contact.first_name %> <%= contact.last_name %></li></a>
 	<% end %>
 </ul>
