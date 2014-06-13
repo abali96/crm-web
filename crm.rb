@@ -1,9 +1,20 @@
 require 'sinatra'
 require 'data_mapper' #even though the gem is written in one word...annoying
-require_relative 'contact'
-require_relative 'rolodex'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3") #creating a file for your database | before the colon, it's saying "we're using sqlite3"
+
+class Contact
+	include DataMapper::Resource 
+
+	property :id, Serial #serial represents an integer that automatically increments
+	property :first_name, String
+	property :last_name, String
+	property :email, String
+	property :note, String
+end
+
+DataMapper.finalize
+DataMapper.upgrade!
 
 @@rolodex = Rolodex.new
 # FAKE DATA:
